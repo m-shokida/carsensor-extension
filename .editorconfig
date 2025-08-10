@@ -1,0 +1,12 @@
+# 最上位のEditorConfigファイル
+root = true
+
+# すべてのファイルにUnixスタイルの改行と末尾の改行を設定
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+indent_style = space
+
+[*.{js,json,ts,tsx}]
+indent_size = 2

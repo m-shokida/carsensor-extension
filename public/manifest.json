@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "CarSensor Extension",
+  "version": "1.0.0",
+  "description": "CarSensorに情報を追加する拡張",
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.carsensor.net/usedcar/detail/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_icon": "images/icon.png"
+  }
+}
