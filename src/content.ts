@@ -1,8 +1,8 @@
 console.log("CarSensor content script loaded!");
 
-const main = () => {
+const main = (): void => {
 
-  const specTable = document.querySelector(".specWrap");
+  const specTable = document.querySelector<HTMLDivElement>(".column__sub .specWrap");
   if (specTable) {
     const modelNumber = document.createElement("div");
     modelNumber.classList.add("specWrap__box");
@@ -17,17 +17,17 @@ const main = () => {
 
     const carImageUrls = getCarImageUrls();
     console.log(carImageUrls);
-    ditail.textContent = 'DBA-ZV37'
+    ditail.textContent = 'DBA-ZV37';
 
     modelNumber.append(title, ditail);
     specTable.appendChild(modelNumber);
   }
 };
 
-const getCarImageUrls = () => {
-  const anchorElements = document.querySelectorAll<HTMLImageElement>("#js-slider .subSliderMain__inner__set li[data-category='G'] a");
-  return Array.from(anchorElements).map(anchorElement =>
-    anchorElement.getAttribute("data-photo") || ""
+const getCarImageUrls = (): string[] => {
+  const anchorElems = document.querySelectorAll<HTMLAnchorElement>("#js-slider .subSliderMain__inner__set li[data-category='G'] a");
+  return Array.from(anchorElems).map(anchorElem =>
+    anchorElem.getAttribute("data-photo") || ""
   );
 };
 

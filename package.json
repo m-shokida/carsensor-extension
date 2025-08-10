@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "watch": "tsc --watch && vite build --watch"
   },
   "devDependencies": {
     "@types/chrome": "^0.1.3",
