@@ -7,7 +7,7 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "dev:build": "vite build --watch",
-    "dev:typecheck": "tsc --noEmit --watch",
+    "dev:typecheck": "tsc --watch",
     "dev": "npm-run-all --parallel dev:*"
   },
   "devDependencies": {
